@@ -16,7 +16,7 @@ void add_file( const char *filename )
 	/**
 	 * The "" empty string is written to the files_content array
 	 * Drawbacks:-
-	 * 	Appending the file is limited to 256 bytes as the size is fixed
+	 * 	Our Filesystem is limited to only 256 files and 256 directories
 	*/
 	curr_file_content_idx++;
 	strcpy( files_content[ curr_file_content_idx ], "" );
@@ -41,7 +41,7 @@ int get_file_index( const char *path )
 {
 	path++; // Eliminating "/" in the path
 
-	
+
 	
 	for ( int curr_idx = 0; curr_idx <= curr_file_idx; curr_idx++ )
 		if ( strcmp( path, files_list[ curr_idx ] ) == 0 )
